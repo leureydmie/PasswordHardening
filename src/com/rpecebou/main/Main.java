@@ -21,7 +21,7 @@ public class Main {
 		String inputPath = args[1];
 		boolean correctErrors = args[2].equals("true") ? true : false;
 		try {
-			System.setErr(new PrintStream("output/errors.txt"));
+			System.setErr(new PrintStream("errors.txt"));
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
