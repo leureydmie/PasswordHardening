@@ -10,8 +10,8 @@ import com.rpecebou.structures.LoginAttempt;
  * 
  * @author rpecebou
  *
- *         This class provides all the functions to select the new distinguished
- *         features once a log in attempt has been successful
+ *         This class provides all the functions to select the new
+ *         distinguishing features once a log in attempt has been successful
  */
 public class DistinguishingFeaturesSelector {
 
@@ -52,7 +52,7 @@ public class DistinguishingFeaturesSelector {
 			double standardDeviation = calculateStandardDeviation(i, mean);
 			if (Math.abs(mean - Constants.T) > Constants.K * standardDeviation) {
 				/*
-				 * This is a distinguished feature !
+				 * This is a distinguishing feature !
 				 */
 				distinguishingFeatures.add(mean < Constants.T ? -1 : 1);
 			} else {

@@ -3,9 +3,13 @@ package com.rpecebou.math;
 import java.math.BigInteger;
 import java.util.Random;
 
+/**
+ * 
+ * @author rpecebou
+ *
+ *         Generate arbitrary long random prime numbers
+ */
 public class RandomPrimeGenerator {
-
-	private static final int PRIME_CERTAINTY = 1;
 
 	/**
 	 * 

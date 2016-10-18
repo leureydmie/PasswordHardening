@@ -21,8 +21,6 @@ import com.rpecebou.utils.StringUtils;
  */
 public class InstructionSelector {
 
-	private BigInteger _q;
-
 	private BigInteger _r;
 
 	private InstructionTable _instructionTable;
@@ -35,7 +33,6 @@ public class InstructionSelector {
 	 *            the random number, seed for the prime number generators
 	 */
 	public InstructionSelector(NonVolatileStorageContent content) {
-		_q = content.getQ();
 		_r = content.getR();
 		_instructionTable = content.getInstructionTable();
 	}

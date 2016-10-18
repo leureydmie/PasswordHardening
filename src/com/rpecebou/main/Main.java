@@ -19,7 +19,7 @@ public class Main {
 		assert (args.length == 3);
 		String password = args[0];
 		String inputPath = args[1];
-		boolean correctErrors = args[1].equals("true") ? true : false;
+		boolean correctErrors = args[2].equals("true") ? true : false;
 		try {
 			System.setErr(new PrintStream("output/errors.txt"));
 		} catch (FileNotFoundException e1) {

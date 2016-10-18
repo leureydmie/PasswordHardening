@@ -7,10 +7,10 @@ import java.util.List;
 
 public class Polynomial {
 
-	public Polynomial() {
-		this(new LinkedList<>());
-	}
-
+	/**
+	 * 
+	 * @param coefficients
+	 */
 	public Polynomial(List<BigInteger> coefficients) {
 		if (null == coefficients || coefficients.isEmpty()) {
 			coefficients = Arrays.asList(new BigInteger[] { BigInteger.ZERO });
@@ -48,6 +48,11 @@ public class Polynomial {
 		return i <= this.getDegree() ? _coefficients.get(i) : BigInteger.ZERO;
 	}
 
+	/**
+	 * 
+	 * @param p
+	 * @return this + p
+	 */
 	public Polynomial add(Polynomial p) {
 		List<BigInteger> resultCoefficients = new LinkedList<>();
 		for (int i = 0; i < Math.max(getDegree(), p.getDegree()); i++) {
@@ -56,6 +61,11 @@ public class Polynomial {
 		return new Polynomial(resultCoefficients);
 	}
 
+	/**
+	 * 
+	 * @param p
+	 * @return this - p
+	 */
 	public Polynomial subtract(Polynomial p) {
 		List<BigInteger> resultCoefficients = new LinkedList<>();
 		for (int i = 0; i < Math.max(getDegree(), p.getDegree()); i++) {
@@ -64,12 +74,11 @@ public class Polynomial {
 		return new Polynomial(resultCoefficients);
 	}
 
-	public Polynomial shift() {
-		List<BigInteger> resultCoefficients = Arrays.asList(new BigInteger[] { BigInteger.ZERO });
-		resultCoefficients.addAll(_coefficients);
-		return new Polynomial(resultCoefficients);
-	}
-
+	/**
+	 * 
+	 * @param i
+	 * @return this*i
+	 */
 	public Polynomial multiplyByScalar(int i) {
 		List<BigInteger> resultCoefficients = new LinkedList<>();
 		BigInteger bigScalar = BigInteger.valueOf(i);

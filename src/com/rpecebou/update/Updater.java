@@ -54,15 +54,16 @@ public class Updater {
 	}
 
 	/**
-	 * 
+	 * - Create the history file - Select new distinguishing features - Update
+	 * instruction table
 	 */
 	public void process() {
 		new HistoryFileCreator(_loginAttempt, _loginHistory).process(_newHardenedPassword);
 		/*
 		 * Consider the first five attempts as legit, so do not calculate
-		 * distinguished features
+		 * distinguishing features
 		 */
-		if (_loginHistory.size() >= Constants.HISTORY_SIZE - 2) {
+		if (_loginHistory.size() + 1 >= Constants.HISTORY_SIZE - 1) {
 			List<Integer> distinguishedFeatures = new DistinguishingFeaturesSelector(_loginHistory, _loginAttempt)
 					.process();
 			new InstructionTableGenerator(_q, _newR, _newF, _loginAttempt, distinguishedFeatures).process();

@@ -18,8 +18,6 @@ public class PseudoRandomGenerator {
 
 	private Random _generator;
 
-	private boolean _keyed = false;
-
 	/**
 	 * 
 	 * @param size
@@ -41,6 +39,11 @@ public class PseudoRandomGenerator {
 		return new Polynomial(coefficients);
 	}
 
+	/**
+	 * 
+	 * @param size
+	 * @param key
+	 */
 	public PseudoRandomGenerator(int size, BigInteger key) {
 		_size = size;
 		if (key.equals(BigInteger.ZERO)) {
@@ -48,13 +51,12 @@ public class PseudoRandomGenerator {
 		} else {
 			_generator = new Random(key.longValue());
 		}
-		_keyed = true;
 	}
 
-	public boolean isKeyed() {
-		return _keyed;
-	}
-
+	/**
+	 * 
+	 * @param size
+	 */
 	public PseudoRandomGenerator(int size) {
 		this(size, BigInteger.ZERO);
 	}
