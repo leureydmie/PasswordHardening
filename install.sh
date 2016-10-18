@@ -1,6 +1,5 @@
 #/bin/sh
 
-mkdir bin
-javac -d bin src/com/rpecebou/**/*.java
-jar -cfe Project1.jar Main bin/com/rpecebou/main/Main.class
-rm -r bin
+javac -d . src/com/rpecebou/**/*.java
+jar -cvfe Project1.jar com/rpecebou/main/Main com/rpecebou/**/*.class
+rm -r com
