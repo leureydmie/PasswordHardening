@@ -28,6 +28,7 @@ public class HistoryFileCreator {
 	 * @param loginHistory
 	 */
 	public HistoryFileCreator(LoginAttempt initialLogin, List<LoginAttempt> loginHistory) {
+		assert (loginHistory.size() + 1 <= Constants.HISTORY_SIZE);
 		_loginHistory = loginHistory;
 		_initialLogin = initialLogin;
 	}

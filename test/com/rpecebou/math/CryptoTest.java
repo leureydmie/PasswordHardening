@@ -7,6 +7,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * 
+ * @author rpecebou
+ *
+ *         Test cryptographic functions
+ */
 public class CryptoTest {
 
 	private static final int SIZE = 160;

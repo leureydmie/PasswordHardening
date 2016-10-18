@@ -36,13 +36,18 @@ public class HardenedPasswordCalculatorTest {
 			BigInteger b = new PseudoRandomGenerator(160).next();
 			points.add(new Point(b, p.evaluate(b)));
 		}
-		System.out.println(points);
-		Assert.assertEquals(new HardenedPasswordCalculator(points, _q).interpolate(), _hardenedPassword);
+		/*
+		 * Test that Lagrange interpolation works on a small polynomial
+		 */
+		Assert.assertEquals(_hardenedPassword, new HardenedPasswordCalculator(points, _q).interpolate());
 	}
 
 	@Test
 	public void process() {
 		BigInteger calculatedHardenedPassword = new HardenedPasswordCalculator(_points, _q).interpolate();
+		/*
+		 * Test that Lagrange interpolation works on actual polynomial
+		 */
 		Assert.assertEquals(_hardenedPassword, calculatedHardenedPassword);
 	}
 
